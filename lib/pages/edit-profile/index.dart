@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:tecmetra_cliente/pages/edit-profile/widgets/edit_profile_slide.dart';
 import 'package:tecmetra_cliente/pages/login/widgets/input-area/widgets/text-field/index.dart';
 import 'package:tecmetra_cliente/widgets/app-button/index.dart';
 import 'package:tecmetra_cliente/widgets/container-fade/index.dart';
@@ -137,19 +138,8 @@ class _EditProfilePageState extends State<EditProfilePage> {
                               "Quantidade de pessoas Residentes",
                             ),
                           ),
-                          Container(
-                            width: MediaQuery.of(context).size.width,
-                            margin: EdgeInsets.only(
-                              left: 5,
-                            ),
-                            child: Slider(
-                              value: _1slideValue,
-                              onChanged: (value) {
-                                setState(() {
-                                  _1slideValue = value;
-                                });
-                              },
-                            ),
+                          EditProfileSlide(
+                            factor: 100,
                           ),
                           Container(
                             margin: EdgeInsets.only(
@@ -164,19 +154,8 @@ class _EditProfilePageState extends State<EditProfilePage> {
                               "Quantidade de Banheiros",
                             ),
                           ),
-                          Container(
-                            width: MediaQuery.of(context).size.width,
-                            margin: EdgeInsets.only(
-                              left: 5,
-                            ),
-                            child: Slider(
-                              value: _2slideValue,
-                              onChanged: (value) {
-                                setState(() {
-                                  _2slideValue = value;
-                                });
-                              },
-                            ),
+                          EditProfileSlide(
+                            factor: 20,
                           ),
                         ],
                       ),
@@ -193,19 +172,8 @@ class _EditProfilePageState extends State<EditProfilePage> {
                           "Quantidade de quartos",
                         ),
                       ),
-                      Container(
-                        width: MediaQuery.of(context).size.width,
-                        margin: EdgeInsets.only(
-                          left: 5,
-                        ),
-                        child: Slider(
-                          value: _3slideValue,
-                          onChanged: (value) {
-                            setState(() {
-                              _3slideValue = value;
-                            });
-                          },
-                        ),
+                      EditProfileSlide(
+                        factor: 20,
                       ),
                       Container(
                         margin: EdgeInsets.only(
@@ -220,19 +188,8 @@ class _EditProfilePageState extends State<EditProfilePage> {
                           "Faixa etária de idade dos moradores",
                         ),
                       ),
-                      Container(
-                        width: MediaQuery.of(context).size.width,
-                        margin: EdgeInsets.only(
-                          left: 5,
-                        ),
-                        child: Slider(
-                          value: _4slideValue,
-                          onChanged: (value) {
-                            setState(() {
-                              _4slideValue = value;
-                            });
-                          },
-                        ),
+                      EditProfileSlide(
+                        factor: 100,
                       ),
                       Container(
                         padding: EdgeInsets.only(

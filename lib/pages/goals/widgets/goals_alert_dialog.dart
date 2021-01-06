@@ -137,7 +137,7 @@ class _AddGoalAlertDialogState extends State<AddGoalAlertDialog> {
                   Container(
                     child: AppButton(
                       width: 280,
-                      text: "Adicioanr",
+                      text: "Adicionar",
                       onPressed: () {},
                     ),
                   )

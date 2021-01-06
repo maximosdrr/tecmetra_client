@@ -11,6 +11,7 @@ class TecmetraApp extends StatelessWidget {
       initialRoute: '/',
       theme: ThemeData(
         fontFamily: 'OpenSans',
+        platform: TargetPlatform.iOS,
       ),
       onGenerateRoute: AppRouter.generateRoute,
       debugShowCheckedModeBanner: false,

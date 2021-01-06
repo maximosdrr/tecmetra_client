@@ -41,18 +41,6 @@ class _AlertsPageState extends State<AlertsPage> {
                       ),
                       onPressed: () => Navigator.pop(context),
                     ),
-                    Container(
-                      margin: EdgeInsets.only(
-                        right: 10,
-                      ),
-                      child: IconButton(
-                        icon: Icon(
-                          Icons.notifications,
-                          color: Colors.white,
-                        ),
-                        onPressed: () {},
-                      ),
-                    ),
                   ],
                 ),
               ),
