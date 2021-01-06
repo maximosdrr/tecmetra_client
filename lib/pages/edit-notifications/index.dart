@@ -1,16 +1,19 @@
 import 'package:flutter/material.dart';
-import 'package:tecmetra_cliente/extensios/hex.dart';
-import 'package:tecmetra_cliente/pages/profile/widgets/menu_list_item.dart';
+import 'package:tecmetra_cliente/pages/edit-notifications/widgets/switch_item.dart';
 import 'package:tecmetra_cliente/widgets/container-fade/index.dart';
 
-class ProfilePage extends StatefulWidget {
-  ProfilePage({Key key}) : super(key: key);
+class EditNotificationPage extends StatefulWidget {
+  EditNotificationPage({Key key}) : super(key: key);
 
   @override
-  _ProfilePageState createState() => _ProfilePageState();
+  _EditNotificationPageState createState() => _EditNotificationPageState();
 }
 
-class _ProfilePageState extends State<ProfilePage> {
+class _EditNotificationPageState extends State<EditNotificationPage> {
+  bool _1switchValue = false;
+  bool _2switchValue = false;
+  bool _3switchValue = false;
+  bool _4switchValue = false;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -21,13 +24,23 @@ class _ProfilePageState extends State<ProfilePage> {
               height: 350,
             ),
             Positioned(
-              top: 60,
-              left: 20,
-              child: Text(
-                "Configurações",
-                style: TextStyle(
+              top: 40,
+              child: FlatButton.icon(
+                label: Text(
+                  "Configurações",
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 20,
+                  ),
+                ),
+                icon: Icon(
+                  Icons.arrow_back,
                   color: Colors.white,
-                  fontSize: 20,
+                ),
+                onPressed: () => Navigator.pushNamedAndRemoveUntil(
+                  context,
+                  '/profile',
+                  (route) => false,
                 ),
               ),
             ),
@@ -91,18 +104,22 @@ class _ProfilePageState extends State<ProfilePage> {
             ),
             Positioned(
               top: 445,
-              left: 20,
-              right: 20,
+              left: 10,
+              right: 10,
               child: Container(
                 width: MediaQuery.of(context).size.width,
                 child: Column(
                   children: [
                     Container(
                       alignment: Alignment.topLeft,
+                      padding: EdgeInsets.only(
+                        left: 10,
+                        right: 10,
+                      ),
                       child: Text(
                         "Geral",
                         style: TextStyle(
-                          fontSize: 18,
+                          fontSize: 22,
                         ),
                       ),
                     ),
@@ -110,51 +127,27 @@ class _ProfilePageState extends State<ProfilePage> {
                       margin: EdgeInsets.only(
                         top: 10,
                       ),
-                      child: ProfileMenuListItem(
-                        title: "Editar Perfil",
-                        subtitle: "Atualize e modifique seu perfil",
-                        icon: Icons.person,
-                        onTap: () => Navigator.pushNamed(
-                          context,
-                          '/edit_profile',
-                        ),
+                      child: EditNotificationSwitchItem(
+                        title: "Alarme via push",
+                        subtitle: "Receber notificações no celular",
                       ),
                     ),
                     Container(
                       margin: EdgeInsets.only(
                         top: 10,
                       ),
-                      child: ProfileMenuListItem(
-                        title: "Notificações",
-                        subtitle: "Configuração de Notificação",
-                        icon: Icons.notifications,
-                        onTap: () => Navigator.pushNamed(
-                          context,
-                          '/edit_notifications',
-                        ),
+                      child: EditNotificationSwitchItem(
+                        title: "Aviso sobre metas",
+                        subtitle: "Receba aviso sobre suas metas",
                       ),
                     ),
                     Container(
                       margin: EdgeInsets.only(
                         top: 10,
                       ),
-                      child: ProfileMenuListItem(
-                        title: "Termos de uso",
-                        subtitle: "Conheça nossos termos",
-                        icon: Icons.article,
-                      ),
-                    ),
-                    Container(
-                      margin: EdgeInsets.only(
-                        top: 10,
-                        bottom: 10,
-                      ),
-                      child: ProfileMenuListItem(
-                        title: "Sair",
-                        subtitle: "Descontectar-se do Tecmetra",
-                        icon: Icons.article,
-                        onTap: () => Navigator.pushNamedAndRemoveUntil(
-                            context, '/login', (route) => false),
+                      child: EditNotificationSwitchItem(
+                        title: "Notificações sobre dicas",
+                        subtitle: "Receba novas dicas sobre o uso",
                       ),
                     ),
                   ],
@@ -162,56 +155,7 @@ class _ProfilePageState extends State<ProfilePage> {
               ),
             ),
             Container(
-              height: 920,
-            )
-          ],
-        ),
-      ),
-      bottomNavigationBar: BottomAppBar(
-        elevation: 16,
-        child: new Row(
-          mainAxisSize: MainAxisSize.max,
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            Container(
-              margin: EdgeInsets.only(left: 5),
-              child: IconButton(
-                onPressed: () => Navigator.pushNamedAndRemoveUntil(
-                    context, '/dashboard', (route) => false),
-                icon: Icon(
-                  Icons.insert_chart_outlined,
-                  size: 28,
-                  color: HexColor.fromHex("#9a8bb5"),
-                ),
-              ),
-            ),
-            Container(
-              child: IconButton(
-                onPressed: () {},
-                icon: Icon(
-                  Icons.comment_bank_outlined,
-                  size: 28,
-                  color: HexColor.fromHex("#9a8bb5"),
-                ),
-              ),
-            ),
-            Container(
-              margin: EdgeInsets.only(right: 10),
-              child: FlatButton.icon(
-                onPressed: () {},
-                icon: Icon(
-                  Icons.person,
-                  size: 28,
-                  color: HexColor.fromHex("#9a8bb5"),
-                ),
-                label: Text(
-                  "Configs.",
-                  style: TextStyle(
-                    fontSize: 16,
-                    color: HexColor.fromHex("#9a8bb5"),
-                  ),
-                ),
-              ),
+              height: 750,
             )
           ],
         ),

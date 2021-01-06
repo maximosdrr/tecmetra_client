@@ -46,7 +46,7 @@ class _DashboardPageState extends State<DashboardPage> {
                         color: Colors.white,
                         size: 28,
                       ),
-                      onTap: () {},
+                      onTap: () => Navigator.pushNamed(context, '/alerts'),
                     )
                   ],
                 ),
@@ -61,36 +61,39 @@ class _DashboardPageState extends State<DashboardPage> {
                   right: 20,
                 ),
                 height: 390,
-                child: Card(
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.all(
-                      Radius.circular(10),
-                    ),
-                  ),
-                  child: Column(
-                    children: [
-                      Container(
-                        padding: EdgeInsets.only(
-                          left: 20,
-                          top: 10,
-                        ),
-                        alignment: Alignment.topLeft,
-                        child: Text(
-                          "Atualizado em 08/01/2020",
-                          style: TextStyle(fontSize: 15),
-                        ),
+                child: InkWell(
+                  onTap: () => Navigator.pushNamed(context, '/consume'),
+                  child: Card(
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.all(
+                        Radius.circular(10),
                       ),
-                      Container(
-                        width: 350,
-                        height: 350,
-                        padding: EdgeInsets.all(25),
-                        child: DashboardGaugeChart(
-                          consumePerMonth: 20438,
-                          bottomNumber: 005513550,
-                          percente: 83,
+                    ),
+                    child: Column(
+                      children: [
+                        Container(
+                          padding: EdgeInsets.only(
+                            left: 20,
+                            top: 10,
+                          ),
+                          alignment: Alignment.topLeft,
+                          child: Text(
+                            "Atualizado em 08/01/2020",
+                            style: TextStyle(fontSize: 15),
+                          ),
                         ),
-                      )
-                    ],
+                        Container(
+                          width: 350,
+                          height: 350,
+                          padding: EdgeInsets.all(25),
+                          child: DashboardGaugeChart(
+                            consumePerMonth: 20438,
+                            bottomNumber: 005513550,
+                            percente: 83,
+                          ),
+                        )
+                      ],
+                    ),
                   ),
                 ),
               ),
@@ -101,7 +104,7 @@ class _DashboardPageState extends State<DashboardPage> {
               child: Row(
                 children: [
                   InkWell(
-                    onTap: () => {},
+                    onTap: () => Navigator.pushNamed(context, '/reports'),
                     child: Card(
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.all(
@@ -244,7 +247,7 @@ class _DashboardPageState extends State<DashboardPage> {
                           ),
                         ),
                         InkWell(
-                          onTap: () {},
+                          onTap: () => Navigator.pushNamed(context, '/alerts'),
                           child: Card(
                             child: Container(
                               margin: EdgeInsets.only(top: 5),

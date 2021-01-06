@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:tecmetra_cliente/pages/alerts/index.dart';
+import 'package:tecmetra_cliente/pages/consume/index.dart';
+import 'package:tecmetra_cliente/pages/edit-notifications/index.dart';
+import 'package:tecmetra_cliente/pages/edit-profile/index.dart';
 import 'package:tecmetra_cliente/pages/profile/index.dart';
 
 import 'pages/apresentation/index.dart';
@@ -30,6 +34,16 @@ class AppRouter {
         return MaterialPageRoute(builder: (_) => ReportsPage());
       case '/profile':
         return MaterialPageRoute(builder: (_) => ProfilePage());
+      case '/edit_profile':
+        return MaterialPageRoute(builder: (_) => EditProfilePage());
+      case '/consume':
+        return MaterialPageRoute(builder: (_) => ConsumePage());
+      case '/reports':
+        return MaterialPageRoute(builder: (_) => ReportsPage());
+      case '/edit_notifications':
+        return MaterialPageRoute(builder: (_) => EditNotificationPage());
+      case '/alerts':
+        return MaterialPageRoute(builder: (_) => AlertsPage());
       default:
         return MaterialPageRoute(
           builder: (_) => DefaultPage(

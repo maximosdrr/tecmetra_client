@@ -4,9 +4,13 @@ class AppTextField extends StatelessWidget {
   final String hintText;
   final bool obscureText;
   final TextEditingController controller;
+  final double fontSize;
+  final FontWeight fontWeight;
   const AppTextField({
     Key key,
     this.hintText,
+    this.fontWeight: FontWeight.normal,
+    this.fontSize: 12,
     this.obscureText: false,
     this.controller,
   }) : super(key: key);
@@ -19,7 +23,8 @@ class AppTextField extends StatelessWidget {
       decoration: InputDecoration(
         labelText: hintText,
         labelStyle: TextStyle(
-          fontSize: 12,
+          fontSize: fontSize,
+          fontWeight: fontWeight,
         ),
       ),
     );
